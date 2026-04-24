@@ -1,4 +1,5 @@
-export const API_BASE_URL = window.localStorage.getItem('mindease_api_url') || 'http://localhost:5000/api';
+export const API_BASE_URL = window.localStorage.getItem('mindease_api_url') || 'https://mindease-vemc.onrender.com/api';
+
 
 export const DEMO_THERAPISTS = [
   {
