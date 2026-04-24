@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin | MindEase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body data-page="admin" class="app-shell">
+    <div id="toast" class="hidden"></div>
+    <main class="mx-auto max-w-7xl px-5 py-8 lg:px-8">
+      <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <p class="text-sm uppercase tracking-[0.24em] text-slate-500">Admin command center</p>
+          <h1 class="font-display text-4xl font-semibold">Platform operations and oversight.</h1>
+        </div>
+        <div class="flex gap-3">
+          <button data-theme-toggle class="btn-secondary text-sm">Theme</button>
+          <a href="./dashboard.html" class="btn-primary text-sm">User App</a>
+        </div>
+      </div>
+      <section id="adminMetrics" class="page-grid cols-3"></section>
+      <section class="mt-6 page-grid cols-2">
+        <article class="glass well-card p-6">
+          <h2 class="mb-5 text-2xl font-semibold">Users</h2>
+          <div id="adminUsers" class="space-y-4"></div>
+        </article>
+        <article class="glass well-card p-6">
+          <h2 class="mb-5 text-2xl font-semibold">Recent bookings</h2>
+          <div id="adminBookings" class="space-y-4"></div>
+        </article>
+      </section>
+    </main>
+    <script type="module" src="../js/app.js"></script>
+  </body>
+</html>

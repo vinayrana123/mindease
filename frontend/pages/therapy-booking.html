@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Therapy Booking | MindEase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body data-page="booking" class="app-shell">
+    <div id="toast" class="hidden"></div>
+    <main class="mx-auto max-w-7xl px-5 py-8 lg:px-8">
+      <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <p class="text-sm uppercase tracking-[0.24em] text-slate-500">Find support</p>
+          <h1 class="font-display text-4xl font-semibold">Browse therapists and reserve your next session.</h1>
+        </div>
+        <div class="flex gap-3">
+          <button data-theme-toggle class="btn-secondary text-sm">Theme</button>
+          <a href="./appointments.html" class="btn-primary text-sm">Appointments</a>
+        </div>
+      </div>
+      <section class="glass hero-card mb-6 p-6">
+        <form id="bookingForm" class="grid gap-4 lg:grid-cols-5">
+          <select name="therapistId" class="form-select lg:col-span-2" required>
+            <option value="">Choose therapist</option>
+            <option value="demo-1">Dr. Ananya Kapoor</option>
+            <option value="demo-2">Dr. Rhea Sen</option>
+            <option value="demo-3">Dr. Meera Joshi</option>
+          </select>
+          <input name="date" type="date" class="form-input" required />
+          <input name="time" type="time" class="form-input" required />
+          <select name="mode" class="form-select" required>
+            <option value="online">Online</option>
+            <option value="offline">Offline</option>
+          </select>
+          <button class="btn-primary lg:col-span-5">Book Session</button>
+        </form>
+      </section>
+      <section id="therapistGrid" class="page-grid cols-3"></section>
+    </main>
+    <script type="module" src="../js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Journal | MindEase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body data-page="journal" class="app-shell">
+    <div id="toast" class="hidden"></div>
+    <main class="mx-auto max-w-7xl px-5 py-8 lg:px-8">
+      <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <p class="text-sm uppercase tracking-[0.24em] text-slate-500">Private reflection space</p>
+          <h1 class="font-display text-4xl font-semibold">Journal what you are carrying.</h1>
+        </div>
+        <a href="./dashboard.html" class="btn-secondary text-sm">Back to dashboard</a>
+      </div>
+      <div class="page-grid sidebar">
+        <section class="glass well-card p-6">
+          <form id="journalForm" class="space-y-4">
+            <input name="title" type="text" placeholder="Entry title" class="form-input" required />
+            <input name="moodTag" type="text" placeholder="Mood tag (e.g. hopeful, tired, reflective)" class="form-input" required />
+            <textarea name="content" rows="8" class="form-textarea" placeholder="Write freely. This space is for you." required></textarea>
+            <button class="btn-primary w-full">Save Journal Entry</button>
+          </form>
+        </section>
+        <aside class="glass well-card p-6">
+          <form id="journalSearchForm" class="mb-5 flex gap-3">
+            <input name="query" type="text" class="form-input" placeholder="Search your journal..." />
+            <button class="btn-secondary text-sm">Search</button>
+          </form>
+          <div id="journalList" class="space-y-4"></div>
+        </aside>
+      </div>
+    </main>
+    <script type="module" src="../js/app.js"></script>
+  </body>
+</html>

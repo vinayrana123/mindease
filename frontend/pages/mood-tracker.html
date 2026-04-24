@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mood Tracker | MindEase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body data-page="mood" class="app-shell">
+    <div id="toast" class="hidden"></div>
+    <main class="mx-auto max-w-7xl px-5 py-8 lg:px-8">
+      <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <p class="text-sm uppercase tracking-[0.24em] text-slate-500">Daily check-in</p>
+          <h1 class="font-display text-4xl font-semibold">How are you feeling today?</h1>
+        </div>
+        <div class="flex gap-3">
+          <button data-theme-toggle class="btn-secondary text-sm">Theme</button>
+          <a href="./dashboard.html" class="btn-primary text-sm">Dashboard</a>
+        </div>
+      </div>
+      <div class="page-grid sidebar">
+        <section class="glass well-card p-6">
+          <form id="moodForm" class="space-y-5">
+            <div>
+              <label class="mb-2 block text-sm font-semibold">Mood</label>
+              <select name="mood" class="form-select" required>
+                <option value="">Select current mood</option>
+                <option>calm</option>
+                <option>happy</option>
+                <option>hopeful</option>
+                <option>sad</option>
+                <option>overwhelmed</option>
+                <option>anxious</option>
+                <option>burned-out</option>
+              </select>
+            </div>
+            <div class="grid gap-5 md:grid-cols-2">
+              <div>
+                <label class="mb-2 block text-sm font-semibold">Stress level</label>
+                <input name="stressLevel" type="range" min="1" max="10" value="5" class="w-full accent-indigo-500" />
+              </div>
+              <div>
+                <label class="mb-2 block text-sm font-semibold">Anxiety level</label>
+                <input name="anxietyLevel" type="range" min="1" max="10" value="5" class="w-full accent-teal-500" />
+              </div>
+            </div>
+            <div>
+              <label class="mb-2 block text-sm font-semibold">Sleep hours</label>
+              <input name="sleepHours" type="number" min="0" max="24" step="0.5" class="form-input" required />
+            </div>
+            <div>
+              <label class="mb-2 block text-sm font-semibold">Notes</label>
+              <textarea name="note" rows="5" class="form-textarea" placeholder="What contributed to today’s emotional state?"></textarea>
+            </div>
+            <button class="btn-primary w-full">Save Daily Entry</button>
+          </form>
+        </section>
+        <aside class="space-y-5">
+          <div class="glass well-card p-6">
+            <p class="text-sm text-slate-500">Care cue</p>
+            <h2 class="mt-3 text-2xl font-semibold">High stress usually responds best to simplicity.</h2>
+            <p class="mt-4 leading-8 text-slate-600">If your stress is elevated today, choose one grounding action: breathing, hydration, a short walk, or a brief check-in with someone safe.</p>
+          </div>
+          <div class="glass well-card p-6">
+            <p class="text-sm text-slate-500">Recent check-ins</p>
+            <div id="moodTimeline" class="mt-5"></div>
+          </div>
+        </aside>
+      </div>
+    </main>
+    <script type="module" src="../js/app.js"></script>
+  </body>
+</html>

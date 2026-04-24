@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings | MindEase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body data-page="settings" class="app-shell">
+    <div id="toast" class="hidden"></div>
+    <main class="mx-auto max-w-6xl px-5 py-8 lg:px-8">
+      <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <p class="text-sm uppercase tracking-[0.24em] text-slate-500">Profile & preferences</p>
+          <h1 class="font-display text-4xl font-semibold">Keep your care settings current.</h1>
+        </div>
+        <button data-theme-toggle class="btn-secondary text-sm">Theme</button>
+      </div>
+      <div class="page-grid cols-2">
+        <section class="glass well-card p-6">
+          <h2 class="text-2xl font-semibold">Profile details</h2>
+          <form id="profileForm" class="mt-6 space-y-4">
+            <input name="name" type="text" placeholder="Full name" class="form-input" />
+            <input name="email" type="email" placeholder="Email address" class="form-input" disabled />
+            <div class="grid gap-4 sm:grid-cols-2">
+              <input name="age" type="number" placeholder="Age" class="form-input" />
+              <select name="gender" class="form-select">
+                <option value="">Select gender</option>
+                <option>Female</option>
+                <option>Male</option>
+                <option>Non-binary</option>
+                <option>Prefer not to say</option>
+              </select>
+            </div>
+            <button class="btn-primary w-full">Update Profile</button>
+          </form>
+        </section>
+        <section class="space-y-6">
+          <div class="glass well-card p-6">
+            <h2 class="text-2xl font-semibold">Change password</h2>
+            <form id="passwordForm" class="mt-6 space-y-4">
+              <input name="currentPassword" type="password" placeholder="Current password" class="form-input" required />
+              <input name="newPassword" type="password" placeholder="New password" class="form-input" required />
+              <button class="btn-primary w-full">Save Password</button>
+            </form>
+          </div>
+          <div class="glass well-card p-6">
+            <h2 class="text-2xl font-semibold">Notifications</h2>
+            <div class="mt-6 space-y-3 text-sm text-slate-600">
+              <div class="flex items-center justify-between rounded-2xl bg-white/60 px-4 py-4"><span>Email reminders</span><span class="font-semibold text-emerald-500">Enabled</span></div>
+              <div class="flex items-center justify-between rounded-2xl bg-white/60 px-4 py-4"><span>Daily check-ins</span><span class="font-semibold text-emerald-500">Enabled</span></div>
+              <div class="flex items-center justify-between rounded-2xl bg-white/60 px-4 py-4"><span>Appointment alerts</span><span class="font-semibold text-emerald-500">Enabled</span></div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script type="module" src="../js/app.js"></script>
+  </body>
+</html>

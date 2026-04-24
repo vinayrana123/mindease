@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | MindEase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body data-page="dashboard" class="app-shell">
+    <div id="toast" class="hidden"></div>
+    <div class="mx-auto max-w-7xl px-5 py-6 lg:px-8">
+      <header class="glass hero-card flex flex-col gap-5 p-5 md:flex-row md:items-center md:justify-between">
+        <div class="flex items-center gap-4">
+          <a href="../index.html" class="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-indigo-500 to-teal-400 text-xl font-semibold text-white">M</a>
+          <div>
+            <p class="text-sm uppercase tracking-[0.24em] text-slate-500">Welcome back</p>
+            <h1 class="font-display text-3xl font-semibold">Hi, <span data-user-name></span></h1>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <button data-theme-toggle class="btn-secondary text-sm">Theme</button>
+          <a href="./mood-tracker.html" class="btn-primary text-sm">New Check-in</a>
+        </div>
+      </header>
+
+      <nav class="mt-6 grid gap-3 overflow-x-auto rounded-[24px] bg-white/40 p-3 text-sm font-semibold text-slate-600 sm:grid-cols-4 lg:grid-cols-8">
+        <a href="./dashboard.html" class="rounded-2xl bg-white/70 px-4 py-3">Dashboard</a>
+        <a href="./mood-tracker.html" class="rounded-2xl px-4 py-3">Mood</a>
+        <a href="./journal.html" class="rounded-2xl px-4 py-3">Journal</a>
+        <a href="./therapy-booking.html" class="rounded-2xl px-4 py-3">Therapy</a>
+        <a href="./appointments.html" class="rounded-2xl px-4 py-3">Appointments</a>
+        <a href="./analytics.html" class="rounded-2xl px-4 py-3">Analytics</a>
+        <a href="./resources.html" class="rounded-2xl px-4 py-3">Resources</a>
+        <a href="./settings.html" class="rounded-2xl px-4 py-3">Settings</a>
+      </nav>
+
+      <section class="mt-6 page-grid cols-3">
+        <article class="metric-card"><p class="text-sm text-slate-500">Wellness Score</p><p class="mt-3 text-4xl font-semibold" data-wellness-score></p></article>
+        <article class="metric-card"><p class="text-sm text-slate-500">Daily Streak</p><p class="mt-3 text-4xl font-semibold" data-streak></p></article>
+        <article class="metric-card"><p class="text-sm text-slate-500">Journal Entries</p><p class="mt-3 text-4xl font-semibold" data-journal-count></p></article>
+      </section>
+
+      <section class="mt-6 page-grid sidebar">
+        <article class="glass well-card p-6">
+          <div class="mb-6 flex items-center justify-between">
+            <div>
+              <p class="text-sm text-slate-500">Mood and recovery trends</p>
+              <h2 class="text-2xl font-semibold">Weekly wellness graph</h2>
+            </div>
+            <span class="pill">Quote: <span data-quote></span></span>
+          </div>
+          <div class="chart-wrap"><canvas id="moodTrendChart"></canvas></div>
+        </article>
+        <aside class="glass well-card p-6">
+          <p class="text-sm text-slate-500">Today’s recommendation</p>
+          <h2 class="mt-3 text-2xl font-semibold">Protect your energy before it gets expensive.</h2>
+          <p class="mt-4 leading-8 text-slate-600">Your latest pattern suggests that sleep is stabilizing recovery. Keep the evening low stimulation and block 20 minutes for reflection before bed.</p>
+          <div class="mt-6 rounded-[24px] bg-gradient-to-br from-teal-400 to-teal-500 p-5 text-white">
+            <p class="text-sm uppercase tracking-[0.24em]">Reminder</p>
+            <p class="mt-3 text-xl font-semibold">Therapy session in 3 days</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="mt-6 page-grid cols-2">
+        <article class="glass well-card p-6">
+          <div class="mb-5 flex items-center justify-between">
+            <h2 class="text-2xl font-semibold">Recent mood entries</h2>
+            <a href="./mood-tracker.html" class="text-sm font-semibold text-indigo-500">Add new</a>
+          </div>
+          <div id="moodTimeline"></div>
+        </article>
+        <article class="glass well-card p-6">
+          <div class="mb-5 flex items-center justify-between">
+            <h2 class="text-2xl font-semibold">Journal preview</h2>
+            <a href="./journal.html" class="text-sm font-semibold text-indigo-500">Open journal</a>
+          </div>
+          <div id="journalPreview" class="space-y-3"></div>
+        </article>
+      </section>
+    </div>
+    <script type="module" src="../js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appointments | MindEase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body data-page="appointments" class="app-shell">
+    <div id="toast" class="hidden"></div>
+    <main class="mx-auto max-w-6xl px-5 py-8 lg:px-8">
+      <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <p class="text-sm uppercase tracking-[0.24em] text-slate-500">Care schedule</p>
+          <h1 class="font-display text-4xl font-semibold">Manage upcoming and past sessions.</h1>
+        </div>
+        <a href="./therapy-booking.html" class="btn-primary text-sm">Book another session</a>
+      </div>
+      <section class="glass hero-card p-6">
+        <div id="bookingList" class="space-y-4"></div>
+      </section>
+    </main>
+    <script type="module" src="../js/app.js"></script>
+  </body>
+</html>

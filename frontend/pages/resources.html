@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resources | MindEase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body data-page="resources" class="app-shell">
+    <div id="toast" class="hidden"></div>
+    <main class="mx-auto max-w-7xl px-5 py-8 lg:px-8">
+      <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <p class="text-sm uppercase tracking-[0.24em] text-slate-500">Self-care library</p>
+          <h1 class="font-display text-4xl font-semibold">Resources for calmer days and stronger routines.</h1>
+        </div>
+        <a href="./dashboard.html" class="btn-secondary text-sm">Back to dashboard</a>
+      </div>
+      <div class="mb-6 rounded-[24px] bg-gradient-to-r from-teal-500 to-cyan-500 p-6 text-white shadow-lg">
+        <p class="text-sm uppercase tracking-[0.24em]">Support notice</p>
+        <p class="mt-3 max-w-3xl text-lg">If you feel unsafe or at risk of harming yourself or others, contact your local emergency number or a verified crisis line immediately. MindEase is not an emergency response service.</p>
+      </div>
+      <section id="resourceGrid" class="page-grid cols-3"></section>
+    </main>
+    <script type="module" src="../js/app.js"></script>
+  </body>
+</html>
